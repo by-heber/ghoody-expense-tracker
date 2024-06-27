@@ -1,0 +1,102 @@
+<head>
+    <link rel=
+</head>
+<?php
+    session_start();
+    if(isset($_SESSION['Users'])){
+        header("location: welcome.php");
+    }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Ghoody</title> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="?">
+</head>
+<body>
+    <div class="title">
+        <h1>Ghoody</h1>
+        <div class="sub-title">
+            <h2>Tecnical Solutions</h2>
+        </div>
+    </div>
+    <div class="container-form register">
+        <div class="information">
+            <div class="info-childs">
+                <h3>Bienvenido</h3>
+                <p>Para ingresar inicia sesion con tus datos</p>
+                <input type="button" value="Inicia Sesion" id="sign-in"></imput>
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-imformation-childs">
+                <h3>Crear una Cuenta</h3>
+                <div class="icons">
+                    <i class='bx bxl-google' ></i>
+                    <i class='bx bxl-microsoft' ></i>
+                    <i class='bx bxl-apple' ></i>
+                </div>
+                <p>o usa tu correo electronico</p>
+                <form action="Database/db_users_register.php" method="POST" class="form">
+                    <label>
+                        <i class='bx bx-user' ></i>
+                        <input type="user" placeholder="Nombres" name="Nombres">
+                    </label>
+                    <label>
+                        <i class='bx bx-user' ></i>
+                        <input type="user" placeholder="Apellidos" name="Apellidos">
+                    </label>
+                    <label>
+                        <i class='bx bx-envelope' ></i>
+                        <input type="email" placeholder="Email" name="Correo">
+                    </label>
+                    <label>
+                        <i class='bx bx-lock-alt' ></i>
+                        <input type="password" placeholder="Contraseña" name="Contraseña">
+                    </label>
+                    <input type="submit" value="Resgistrate">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container-form login">
+        <div class="information">
+            <div class="info-childs">
+                <h3>Bienvenido</h3>
+                <p>Para ingresar registrate con tus datos</p>
+                <input type="button" value="Resgistrate" id="sign-up"></imput>
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-imformation-childs">
+                <h3>Inicia Sesion</h3>
+                <div class="icons">
+                    <i class='bx bxl-google' ></i>
+                    <i class='bx bxl-microsoft' ></i>
+                    <i class='bx bxl-apple' ></i>
+                </div>
+                <p>o usa tu correo electronico</p>
+                <form action="Database/db_users_login.php" method="POST" class="form">
+                    <label>
+                        <i class='bx bx-envelope' ></i>
+                        <input type="email" placeholder="Email" name="Correo">
+                    </label>
+                    <label>
+                        <i class='bx bx-lock-alt' ></i>
+                        <input type="password" placeholder="Contraseña" name="Contraseña">
+                    </label>
+                    <input type="submit" value="Inicia Sesion">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
